@@ -22,19 +22,20 @@ public class containerTest {
     public void setupTest (){
         //Create a new ChromeDriver
     	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("�no-sandbox");
-		options.addArguments("single-process");
-		options.addArguments("start-maximized");         // open Browser in maximized mode
-		options.addArguments("disable-infobars");        // disabling infobars
-    	options.addArguments("--headless");
-    	options.addArguments("--disable-gpu");
-    	options.addArguments("'window-size=1024,768'");
-        options.addArguments("--disable-features=VizDisplayCompositor");
-        options.addArguments("--incognito");
-        options.addArguments("enable-automation");
-        options.addArguments("--disable-extensions");
-        options.addArguments("--dns-prefetch-disable");
-
+      options.addArguments("--no-sandbox");
+  		options.addArguments("--single-process");
+  		options.addArguments("--start-maximized");         // open Browser in maximized mode
+  		options.addArguments("--disable-infobars");        // disabling infobars
+      options.addArguments("--headless");
+      options.addArguments("--disable-gpu");
+      options.addArguments("'window-size=1024,768'");
+      options.addArguments("--disable-features=VizDisplayCompositor");
+      options.addArguments("--incognito");
+      options.addArguments("enable-automation");
+      options.addArguments("--disable-extensions");
+      options.addArguments("--dns-prefetch-disable");
+      options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+      options.setExperimentalOption("useAutomationExtension", false);
 
     	//options.setExperimentalOption(useAutomationExtension, false);
         driver = new ChromeDriver();

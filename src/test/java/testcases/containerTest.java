@@ -15,14 +15,14 @@ public class containerTest {
     public WebDriver driver;
 
     //Declare a test URL variable
-    public String testURL = "http://www.swtestacademy.com/";
+    public String testURL = "https://www.swtestacademy.com/";
 
     //-----------------------------------Test Setup-----------------------------------
     @BeforeMethod
     public void setupTest (){
         //Create a new ChromeDriver
     	ChromeOptions options = new ChromeOptions();
-      options.addArguments("--no-sandbox");
+    	options.addArguments("--no-sandbox");
   		options.addArguments("--single-process");
   		options.addArguments("--start-maximized");         // open Browser in maximized mode
   		options.addArguments("--disable-infobars");        // disabling infobars
@@ -38,7 +38,7 @@ public class containerTest {
       options.setExperimentalOption("useAutomationExtension", false);
 
     	//options.setExperimentalOption(useAutomationExtension, false);
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         //System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
         //Go to www.swtestacademy.com

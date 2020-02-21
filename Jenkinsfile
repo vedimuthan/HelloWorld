@@ -25,7 +25,9 @@ pipeline {
     }
     stage('BUILD') {
       steps {
+        withSonarQubeEnv('sonarqube') {
         sh 'mvn clean install sonar:sonar'
+        }
       }
     }
     stage('Quality Gate') {

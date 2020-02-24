@@ -15,17 +15,17 @@ public class containerTest {
     public WebDriver driver;
 
     //Declare a test URL variable
-    public String testURL = "https://www.swtestacademy.com/";
+    public String testURL = "https://www.google.com/";
 
     //-----------------------------------Test Setup-----------------------------------
     @BeforeMethod
     public void setupTest (){
         //Create a new ChromeDriver
-    	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("--no-sandbox");
-  		options.addArguments("--single-process");
-  		options.addArguments("--start-maximized");         // open Browser in maximized mode
-  		options.addArguments("--disable-infobars");        // disabling infobars
+      ChromeOptions options = new ChromeOptions();
+	  options.addArguments("--no-sandbox");
+  	  options.addArguments("--single-process");
+  	  options.addArguments("--start-maximized");         // open Browser in maximized mode
+  	  options.addArguments("--disable-infobars");        // disabling infobars
       options.addArguments("--headless");
       options.addArguments("--disable-gpu");
       options.addArguments("'window-size=1024,768'");
@@ -37,11 +37,9 @@ public class containerTest {
       options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
       options.setExperimentalOption("useAutomationExtension", false);
 
-    	//options.setExperimentalOption(useAutomationExtension, false);
         driver = new ChromeDriver(options);
         //System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
-        //Go to www.swtestacademy.com
         driver.navigate().to(testURL);
     }
 
@@ -55,7 +53,7 @@ public class containerTest {
         System.out.println("Page Title: " + title);
 
         //Assertion
-        Assert.assertEquals(title, "Software Test Academy", "Title assertion is failed!");
+        Assert.assertEquals(title, "Google", "Title assertion is failed!");
     }
 
     //-----------------------------------Test TearDown-----------------------------------
